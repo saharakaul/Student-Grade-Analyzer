@@ -64,13 +64,17 @@ function calcStats() {
     document.getElementById("ave-grade").innerHTML = arrayAverage(studentGrades);
 }
 function includes(item, anArray) {
+    let found = 0;
     for (let i = 0; i < anArray.length; i++) {
         if(anArray[i] == item) {
+            found ++;
             return 'true';
-        } else {
-            return 'false';
-        }
+        } 
     }
+    if (found != 1) {
+        return 'false';
+    }
+}
 }
 function minItem(anArray) {
     let min = anArray[0];
